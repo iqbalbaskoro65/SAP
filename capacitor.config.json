@@ -1,0 +1,6 @@
+{
+  "appId": "com.yacoonps.sap",
+  "appName": "SAP Mobile",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

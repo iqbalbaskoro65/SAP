@@ -1,0 +1,324 @@
+.offline {
+  text-align: center;
+  padding: 5px 0;
+  background-color: #d10000;
+  color: white;
+}
+ion-alert.my-custom-class {
+  font-size: 2rem;
+}
+.my-custom-class .alert-wrapper .alert-head h2 {
+  font-size: 1.3rem;
+}
+.my-custom-class .alert-wrapper .alert-message {
+  font-size: 1.1rem;
+}
+ion-back-button {
+  font-size: 1.3rem;
+  --color: var(--ion-color-primary-contrast);
+}
+ion-header::after {
+  display: none;
+}
+.ios ion-toolbar {
+  /* --background: var(--ion-color-primary-shade); */
+  --color: var(--ion-color-primary-contrast);
+  /* height: 70px; */
+  display: flex;
+  --background: url("../assets/background/bg-pot.png") no-repeat center/cover;
+}
+.md ion-toolbar {
+  /* --background: var(--ion-color-primary-shade); */
+  --color: var(--ion-color-primary-contrast);
+  height: 70px;
+  display: flex;
+  --background: url("../assets/background/bg-pot.png") no-repeat center/cover;
+}
+ion-toolbar ion-title {
+  font-size: 1.6rem;
+}
+ion-card {
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: rgba(14, 42, 71, 0.5) 0px 3px 7px 2px;
+}
+.transparent-modal {
+  --background: transparent !important;
+}
+
+.flex-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* tabs */
+ion-tab-bar {
+  position: relative;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  --border: none;
+  --background: #f9f9ff;
+  /* --background: red; */
+  /* box-shadow: rgba(14, 42, 71, 0.5) 0px 5px 5px 2px; */
+}
+ion-tab-bar ion-tab-button {
+  --background: #ffff;
+}
+ion-tab-bar ion-tab-button.second {
+  border-top-right-radius: 30px;
+}
+ion-tab-bar ion-tab-button.third {
+  border-top-left-radius: 30px;
+}
+.tabs-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: #1c6afe;
+}
+svg {
+  margin-top: 20px;
+  width: 80px;
+}
+svg path {
+  fill: #ffff;
+}
+/* end tabs */
+/* splash */
+.container-splash {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container-splash .circle-splash {
+  background: white;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.container-splash img {
+  width: 120px;
+}
+.container-splash .title-wave {
+  position: relative;
+}
+.title-wave span {
+  padding: 0 5px;
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  animation: flips 2s infinite;
+  animation-delay: calc(0.4s * var(--i));
+}
+/* splash end */
+
+/* home page */
+.header-home {
+  background: url("../assets/background/bg-land.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.title-home {
+  color: white;
+  margin-top: -30px;
+}
+.main-content {
+  width: 100%;
+  margin-top: -70px;
+}
+.main-content .warning-hazop {
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.card-isi {
+  background-color: #f9f9ff;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  padding: 15px 30px 30px 30px;
+}
+.card-menu {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 20px;
+}
+.card-list {
+  background-color: white;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  box-shadow: rgba(14, 42, 71, 0.5) 0px 3px 7px 2px;
+  border-radius: 20px;
+  padding: 15px 0;
+}
+.card-list img {
+  width: 100px;
+  padding-bottom: 10px;
+}
+/* end home page */
+
+/* inspeksi page */
+
+/* inspeksi page end */
+
+/* safety meeting menu page */
+
+.first-content {
+  padding: 120px 0 100px 0;
+  background: #ffff;
+  display: flex;
+  justify-content: center;
+}
+.first-content img {
+  width: 100%;
+  max-width: 250px;
+}
+.second-content {
+  width: 100%;
+  height: 45px;
+  margin-top: -44px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  background: #1c6afa;
+}
+.swiper-meeting {
+  height: 300px;
+  max-height: 350px;
+  display: grid;
+  /* justify-content: center; */
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  padding: 35px 35px;
+}
+span.swiper-pagination-bullet {
+  background-color: rgb(255, 255, 255) !important;
+}
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: rgb(255, 145, 0) !important;
+}
+
+/* safety meeting menu page end */
+
+/* safety meeting page */
+.scanner-ui {
+  display: none !important;
+}
+.scanner-hide {
+  visibility: visible !important;
+}
+
+body.qrscanner {
+  background-color: transparent !important;
+}
+body.qrscanner .scanner-ui {
+  display: block !important;
+}
+body.qrscanner .scanner-hide {
+  visibility: hidden !important;
+}
+.scanner-buttons {
+  margin: 0px;
+  position: absolute;
+  bottom: 40px;
+  width: 100vw;
+  height: 50px;
+  z-index: 11;
+}
+
+.scan-box {
+  border: 2px solid #fff;
+  border-radius: 25px;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7);
+  content: "";
+  display: block;
+  left: 50%;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+
+.result {
+  margin-top: 10px;
+  text-align: center !important;
+}
+.result img {
+  margin-bottom: 10px;
+}
+.result p {
+  color: #009045;
+  font-size: 18px;
+}
+.card-scanner {
+  padding: 20px;
+  margin-top: 30px;
+  background-color: #fff;
+  box-shadow: rgba(14, 42, 71, 0.5) 0px 3px 7px 2px;
+  border-radius: 25px;
+}
+.card-scanner .title {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.card-scanner .title .waktu,
+.tanggal {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.card-scanner .message {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.card-scanner .username {
+  background-color: #1c6afa;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* safety meeting page */
+
+@keyframes flips {
+  0%,
+  80% {
+    transform: rotateY(360deg);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "SAPMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
