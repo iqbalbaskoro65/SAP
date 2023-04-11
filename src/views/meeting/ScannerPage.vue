@@ -79,7 +79,7 @@
       </div>
       <div class="scan-box" :hidden="!scanActive">
         <div class="title-scan-box" style="color: white">
-          <h1 style="font-weight: 600; margin: 0">S A P</h1>
+          <h1 style="font-weight: 600; margin: 0">{{ titleScan }}</h1>
           <p style="margin: 0">
             Arahkan kamera ke QR Code ID Card untuk melakukan pemindaian
           </p>
@@ -111,7 +111,7 @@ import {
   IonLoading,
   modalController,
 } from "@ionic/vue";
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent, onMounted, onUpdated, ref } from "vue";
 import {
   scanOutline,
   closeOutline,
@@ -141,6 +141,7 @@ import { alertV, toastV, tokenExpired } from "../../composables/alerts";
 import { useRouter } from "vue-router";
 import OfflineMode from "../../components/OfflineMode.vue";
 import axios from "axios";
+import { Capacitor } from "@capacitor/core";
 
 export default defineComponent({
   name: "MeetingV",
@@ -172,11 +173,13 @@ export default defineComponent({
     const DeniedMssg = ref();
     const mode = ref();
     const employe = ref();
+    const titleScan = ref("S A P");
 
     // modal atr
 
     onMounted(async () => {
       LoadEmp();
+      checkPlatform();
       // await dataServices.addData("safety-meeting-general", {
       //   Employee: "Syahbudin",
       //   Inspection: "Mingguan",
@@ -189,12 +192,36 @@ export default defineComponent({
       fullDate.value = GetFullDate(new Date());
       timeAMPM.value = formatAMPM(new Date());
       BarcodeScanner.prepare();
-      setInterval(() => {
+      var intervalM = setInterval(() => {
         if (router.currentRoute.value.name == "safety" && !scanActive.value) {
           showTabBar();
+        } else {
+          setTimeout(() => {
+            clearInterval(intervalM);
+          }, 1000);
         }
       }, 200);
     });
+    onUpdated(() => {
+      var intervalM = setInterval(() => {
+        if (router.currentRoute.value.name == "safety" && !scanActive.value) {
+          showTabBar();
+        } else {
+          setTimeout(() => {
+            clearInterval(intervalM);
+          }, 1000);
+        }
+      }, 200);
+    });
+
+    const checkPlatform = () => {
+      const platform = Capacitor.getPlatform();
+      if (platform == "ios") {
+        titleScan.value = "B B S P";
+      } else {
+        titleScan.value = "S A P";
+      }
+    };
 
     const LoadEmp = async () => {
       const token = ls.get("token", { decrypt: true });
@@ -258,7 +285,16 @@ export default defineComponent({
         resultBarcode.value = null;
         noRegister.value = null;
         scanActive.value = true;
-        hideTabBar();
+        var intervalS = setInterval(() => {
+          if (router.currentRoute.value.name == "safety" && scanActive.value) {
+            hideTabBar();
+          } else {
+            setTimeout(() => {
+              clearInterval(intervalS);
+            }, 1000);
+          }
+        }, 200);
+
         isResult.value = false;
         isDenied.value = false;
         document.body.classList.add("qrscanner");
@@ -485,6 +521,7 @@ export default defineComponent({
       uploadData,
       isLoading,
       DeniedMssg,
+      titleScan,
     };
   },
 });

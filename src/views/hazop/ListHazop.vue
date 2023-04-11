@@ -221,6 +221,15 @@ export default defineComponent({
       }, 1500);
     };
 
+    function addMonths(date, months) {
+      var d = date.getDate();
+      date.setMonth(date.getMonth() + +months);
+      if (date.getDate() != d) {
+        date.setDate(0);
+      }
+      return date;
+    }
+
     const takeDateRange = () => {
       var date1 = "";
       var date2 = "";
@@ -233,10 +242,16 @@ export default defineComponent({
           "-" +
           "26";
       } else {
+        let dates = new Date(
+          addMonths(
+            new Date(date.getFullYear(), date.getMonth(), 26),
+            -1
+          ).toString()
+        );
         date1 =
-          date.getFullYear() +
+          dates.getFullYear() +
           "-" +
-          ("00" + date.getMonth()).slice(-2) +
+          String(dates.getMonth() + 1).padStart(2, "0") +
           "-" +
           "26";
       }

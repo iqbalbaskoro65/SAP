@@ -81,7 +81,7 @@
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper";
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, onUpdated } from "vue";
 import {
   IonPage,
   IonHeader,
@@ -114,8 +114,24 @@ export default defineComponent({
   setup() {
     const router = useRouter();
     onMounted(() => {
-      setInterval(() => {
-        if (router.currentRoute.value.name == "meeting") {
+      var interval = setInterval(() => {
+        console.log(router.currentRoute.value.name);
+        if (router.currentRoute.value.name != "meeting") {
+          setTimeout(() => {
+            clearInterval(interval);
+          }, 1000);
+        } else {
+          hideTabBar();
+        }
+      }, 200);
+    });
+    onUpdated(() => {
+      var interval = setInterval(() => {
+        if (router.currentRoute.value.name != "meeting") {
+          setTimeout(() => {
+            clearInterval(interval);
+          }, 1000);
+        } else {
           hideTabBar();
         }
       }, 200);
